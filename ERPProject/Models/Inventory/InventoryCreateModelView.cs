@@ -16,5 +16,6 @@ namespace ERPProject.Models.Inventory
         public string Name { get; set; }
         public string InventoryNumber { get; set; }
         public InventoryGroup InventoryGroup { get; set; }
+
     }
 }

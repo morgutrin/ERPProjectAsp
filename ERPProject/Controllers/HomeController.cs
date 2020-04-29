@@ -7,14 +7,15 @@ using System.Web.Security;
 
 namespace ERPProject.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        [Authorize(Roles = "IT")]
+
         public ActionResult Index()
         {
             return View();
         }
-        [Authorize]
+
         public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();

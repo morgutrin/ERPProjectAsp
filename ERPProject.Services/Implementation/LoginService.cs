@@ -27,5 +27,15 @@ namespace ERPProject.Services.Implementation
             var operatorRoles = oOperator.OperatorRoles.ToList().Select(x => x.Role.Name);
             return operatorRoles.ToArray();
         }
+
+        public List<Role> GetRoles()
+        {
+            return _context.Roles.ToList();
+        }
+
+        public void CreateOperator(Operator oOperator)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

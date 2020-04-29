@@ -169,6 +169,7 @@
     <Compile Include="Models\Inventory\InventoryDetailsModelView.cs" />
     <Compile Include="Models\Inventory\InventoryEditModelView.cs" />
     <Compile Include="Models\Inventory\InventoryIndexModelView.cs" />
+    <Compile Include="Models\Login\LoginCreateModelView.cs" />
     <Compile Include="Models\Login\LoginIndexModelView.cs" />
     <Compile Include="MyRoleProvider\MyRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,6 +227,7 @@
     <Content Include="Views\Contractor\Details.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

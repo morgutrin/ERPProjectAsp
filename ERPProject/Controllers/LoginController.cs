@@ -11,10 +11,12 @@ namespace ERPProject.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IEmployeeService _employeeService;
         private readonly ILoginService _loginService;
-        public LoginController(ILoginService loginService)
+        public LoginController(ILoginService loginService, IEmployeeService employeeService)
         {
             _loginService = loginService;
+            _employeeService = employeeService;
         }
         // GET: Login
         public ActionResult Login()
@@ -46,6 +48,19 @@ namespace ERPProject.Controllers
                 ModelState.AddModelError("", "Invalid user/pass");
                 return View();
             }
+        }
+
+        public ActionResult Create()
+        {
+            var model = new LoginCreateModelView();
+            model.Roles = new List<SelectListItem>();
+            @ViewBag.Employees = new SelectList(_employeeService.GetAll(), "Id", "FullName");
+            model.SelectedRoles = new[] { _loginService.GetRoles().Count };
+            foreach (var role in _loginService.GetRoles())
+            {
+                model.Roles.Add(new SelectListItem { Text = role.Name, Value = role.Id.ToString() });
+            }
+            return View(model);
         }
     }
 }
