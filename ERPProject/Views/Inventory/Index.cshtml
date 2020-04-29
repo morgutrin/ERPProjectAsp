@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ERPProject.Models.Inventory.InventoryIndexModelView>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inventory list:</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="inventoryTable">
+    
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryGroup)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryGroup)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+            </td>
+        </tr>
+    }
+
+</table>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+@section scripts
+{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#inventoryTable').DataTable({
+                "language": {
+                    "lengthMenu": "Show _MENU_ records",
+                    "zeroRecords": "Nothing",
+                    "info": "Page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records",
+                    "infoFiltered": "(filter)",
+                    "sSearch": "Search:",
+                    "oPaginate": {
+                        "sFirst": "First",
+                        "sLast": "Last",
+                        "sNext": "Next",
+                        "sPrevious": "Previous"
+                    },
+                }
+            });
+        });
+
+
+    </script>
+}

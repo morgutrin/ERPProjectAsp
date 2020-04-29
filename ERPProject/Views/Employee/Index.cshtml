@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ERPProject.Models.Employee.EmployeeIndexViewModel>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee List</h2>
+
+
+<p>
+    @Html.ActionLink("Add Employee", "Create")
+</p>
+<table class="table" id="employeeTable">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DateJoined)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DateJoined.Day)/
+                @Html.DisplayFor(modelItem => item.DateJoined.Month)/
+                @Html.DisplayFor(modelItem => item.DateJoined.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                @if (item.IsActive == true)
+                {
+                    @Html.ActionLink("Retire", "Delete", new {id = item.Id})
+                }
+                else
+                {
+                    @Html.ActionLink("Hire", "Hire", new {id = item.Id})
+                }
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+@section scripts
+{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#employeeTable').DataTable({
+                "language": {
+                    "lengthMenu": "Show _MENU_ records",
+                    "zeroRecords": "Nothing",
+                    "info": "Page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records",
+                    "infoFiltered": "(filter)",
+                    "sSearch": "Search:",
+                    "oPaginate": {
+                        "sFirst": "First",
+                        "sLast": "Last",
+                        "sNext": "Next",
+                        "sPrevious": "Previous"
+                    },
+                }
+            });
+        });
+
+
+    </script>
+}
