@@ -11,11 +11,14 @@ namespace ERPProject.Models.Login
 {
     public class LoginCreateModelView
     {
+        [Required]
         public string Login { get; set; }
         [DataType(DataType.Password)]
+        [Required]
         public string Password { get; set; }
         [DisplayName("Employee")]
         public int EmployeeId { get; set; }
+        [Required]
         public List<SelectListItem> Roles { get; set; }
         public int[] SelectedRoles { get; set; }
     }

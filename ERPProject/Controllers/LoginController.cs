@@ -1,4 +1,5 @@
-﻿using ERPProject.Models.Login;
+﻿using ERPProject.Entity;
+using ERPProject.Models.Login;
 using ERPProject.Services;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,22 @@ namespace ERPProject.Controllers
                 model.Roles.Add(new SelectListItem { Text = role.Name, Value = role.Id.ToString() });
             }
             return View(model);
+        }
+        [HttpPost]
+        public ActionResult Create(LoginCreateModelView model)
+        {
+
+            Operator oOperator = new Operator
+            {
+                EmployeeId = model.EmployeeId,
+                Login = model.Login,
+                Password = model.Password,
+
+            };
+            _loginService.CreateOperator(oOperator, model.SelectedRoles);
+
+
+            return RedirectToAction("Index", "Inventory");
         }
     }
 }

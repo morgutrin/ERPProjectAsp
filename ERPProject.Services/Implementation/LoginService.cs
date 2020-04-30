@@ -33,9 +33,27 @@ namespace ERPProject.Services.Implementation
             return _context.Roles.ToList();
         }
 
-        public void CreateOperator(Operator oOperator)
+        public void CreateOperator(Operator oOperator, int[] selectedRoles)
         {
-            throw new NotImplementedException();
+            _context.Operators.Add(oOperator);
+            _context.SaveChanges();
+            var getOperator = GetOperator(oOperator.Login);
+            List<OperatorRoles> roles = new List<OperatorRoles>();
+            foreach (var operatorRole in selectedRoles)
+            {
+                _context.OperatorRoles.Add(new OperatorRoles
+                {
+                    OperatorId = getOperator.Id,
+                    RoleId = operatorRole
+
+                });
+
+            }
+
+            _context.SaveChanges();
+
         }
+
+
     }
 }

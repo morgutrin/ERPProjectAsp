@@ -13,3 +13,4 @@ C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Entity\bin\Debug\EntityF
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Entity\bin\Debug\System.Collections.Immutable.xml
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Entity\bin\Debug\System.Reflection.Metadata.xml
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Entity\obj\Debug\ERPProject.Entity.csproj.CopyComplete
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Entity\obj\Debug\ERPProject.Entity.csprojAssemblyReference.cache
