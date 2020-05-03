@@ -20,10 +20,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                   
                     <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
                     <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
                     <li>@Html.ActionLink("Contractors", "Index", "Contractor")</li>
-                    <li>@Html.ActionLink("Operators", "Create", "Login")</li>
+                    <li>@Html.ActionLink("Operators", "Index", "Login")</li>
+                    <li><div class="dropdown" style="padding-top: 10px">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Configuration
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @Html.ActionLink("Employees", "Index", "Employee") <br/>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div></li>
                 </ul>
             </div>
         </div>

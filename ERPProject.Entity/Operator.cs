@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ERPProject.Entity
 {
     [Table("Operators")]
-    public class Operator
+    public class Operator : IEquatable<Operator>
     {
         [Key]
         public int Id { get; set; }
@@ -22,5 +22,9 @@ namespace ERPProject.Entity
         public virtual ICollection<OperatorRoles> OperatorRoles { get; set; }
 
 
+        public bool Equals(Operator other)
+        {
+            return other.EmployeeId.ToString().Equals(this.EmployeeId.ToString());
+        }
     }
 }

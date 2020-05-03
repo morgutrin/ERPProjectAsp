@@ -23,11 +23,11 @@ namespace ERPProject.Controllers
         public ActionResult Login()
         {
 
-            return View(new LoginIndexModelView());
+            return View(new LoginLoginModelView());
         }
         [HttpPost]
 
-        public ActionResult Login(LoginIndexModelView view, string returnUrl)
+        public ActionResult Login(LoginLoginModelView view, string returnUrl)
         {
             var dataItem = _loginService.GetOperator(view.Login);
             if (dataItem != null)
@@ -51,10 +51,20 @@ namespace ERPProject.Controllers
             }
         }
 
+        public ActionResult Index()
+        {
+
+            var model = _loginService.GetAll().Select(x => new LoginIndexModelView
+            {
+                EmployeeFullName = x.Employee.FullName,
+                Login = x.Login,
+                Roles = _loginService.GetEmployeeRolesString(x.EmployeeId)
+            });
+            return View(model);
+        }
         public ActionResult Create()
         {
-            var model = new LoginCreateModelView();
-            model.Roles = new List<SelectListItem>();
+            var model = new LoginCreateModelView { Roles = new List<SelectListItem>() };
             @ViewBag.Employees = new SelectList(_employeeService.GetAll(), "Id", "FullName");
             model.SelectedRoles = new[] { _loginService.GetRoles().Count };
             foreach (var role in _loginService.GetRoles())

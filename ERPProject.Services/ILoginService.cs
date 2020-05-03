@@ -13,5 +13,7 @@ namespace ERPProject.Services
         string[] GetRoles(string login);
         List<Role> GetRoles();
         void CreateOperator(Operator oOperator, int[] selectedRoles);
+        List<Operator> GetAll();
+        string GetEmployeeRolesString(int employeeId);
     }
 }

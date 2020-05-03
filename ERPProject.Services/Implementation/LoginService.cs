@@ -3,6 +3,7 @@ using ERPProject.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,6 +55,27 @@ namespace ERPProject.Services.Implementation
 
         }
 
+        public List<Operator> GetAll()
+        {
 
+            return _context.Operators.ToList();
+        }
+
+        public string GetEmployeeRolesString(int employeeId)
+        {
+            string temp = "";
+            var @operator = _context.Operators.FirstOrDefault(x => x.EmployeeId.Equals(employeeId));
+            var roles = _context.OperatorRoles.Where(x => x.OperatorId.Equals(@operator.Id)).Select(x => new
+            {
+                x.Role.Name
+            }).ToArray();
+            foreach (var role in roles)
+            {
+                temp += role.Name;
+            }
+
+
+            return temp;
+        }
     }
 }
