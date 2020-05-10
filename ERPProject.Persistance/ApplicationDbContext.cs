@@ -22,6 +22,10 @@ namespace ERPProject.Persistance
         public DbSet<Operator> Operators { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<OperatorRoles> OperatorRoles { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleGroup> ArticleGroups { get; set; }
+        public DbSet<ExternalReceiptRow> ExternalReceiptRows { get; set; }
+        public DbSet<ExternalReceipt> ExternalReceipts { get; set; }
 
 
     }

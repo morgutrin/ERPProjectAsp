@@ -58,12 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="ArticleGroup.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ContactPerson.cs" />
     <Compile Include="Contractor.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="CountrySign.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="ExternalReceipt.cs" />
+    <Compile Include="ExternalReceiptRow.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="InventoryGroup.cs" />
     <Compile Include="Operator.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Unit.cs" />
+    <Compile Include="Warehouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

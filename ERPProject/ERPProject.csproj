@@ -152,6 +152,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +173,8 @@
     <Compile Include="Models\Login\LoginCreateModelView.cs" />
     <Compile Include="Models\Login\LoginIndexModelView.cs" />
     <Compile Include="Models\Login\LoginLoginModelView.cs" />
+    <Compile Include="Models\Warehouse\ExternalReceiptCreateModelView.cs" />
+    <Compile Include="Models\Warehouse\ExternalReceipt\ExternalReceiptCreateModelView.cs" />
     <Compile Include="MyRoleProvider\MyRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup1.cs" />
@@ -185,19 +188,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\myScripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -230,6 +240,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Create.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Warehouse\ExternalReceiptIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

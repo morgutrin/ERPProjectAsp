@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "ExternalReceiptIndex";
+}
+
+<h2>ExternalReceiptIndex</h2>
+
+<div class="container">
+    <div class="master">
+        <h2>External Receipt</h2>
+        <table class="table table-responsive">
+            <tr>
+                <td>External Receipt Number</td>
+                <td>
+                    <input type="text" id="ExtRecNo" class="form-control" />
+                    <span class="error">External Receipt No Required</span>
+                </td>
+                <td>Created on</td>
+                <td>
+                    <input type="text" id="ExtRecDate" class="form-control" />
+                    <span class="error">Date Required</span>
+                </td>
+                <td>
+                    <select id="contractor" class="pc form-control" onchange="LoadContractor(this)">
+                        <option>Select</option>
+                    </select>
+                    <span class="error">Select Contractor</span>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="details">
+        <h2>Articles</h2>
+        <table class="table table-responsive">
+            <tr>
+                <td>Article</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>&nbsp;</td>
+
+            </tr>
+            <tr class="mycontainer" id="mainrow"></tr>
+            <td>
+                <select id="article" class="pc form-control" onchange="LoadArticles(this)">
+                    <option>Select</option>
+                </select>
+                <span class="error">Select Article</span>
+            </td>
+           
+            <td>
+                <input type="text" id="price" class="form-control" />
+                <span class="error">Price Required</span>
+            </td>
+          
+            <td>
+                <input type="text" id="amount" class="form-control" />
+                <span class="error">Amount Required</span>
+            </td>
+            <td>
+                <input type="button" id="add" value="Add" style="width: 80px" class="btn btn-success" />
+            </td>
+        </table>
+        <div id="ExtRows">
+            <table class="table table-responsive" id="ExtRowsItems"></table>
+            <span id="extRowsError" style="color:red"></span>
+        </div>
+        <div style="text-align: right">
+            <input type="button" id="submit" value="Save External Receipt" class="btn btn-warning" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#ExtRecDate').datepicker({
+            dateFormat: 'dd-mm-yy'
+        })
+    })
+</script>

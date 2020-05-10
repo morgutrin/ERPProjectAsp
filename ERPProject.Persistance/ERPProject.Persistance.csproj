@@ -79,6 +79,18 @@
     <Compile Include="Migrations\202004272342277_logins.designer.cs">
       <DependentUpon>202004272342277_logins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005091450223_receipt.cs" />
+    <Compile Include="Migrations\202005091450223_receipt.designer.cs">
+      <DependentUpon>202005091450223_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005101428252_date.cs" />
+    <Compile Include="Migrations\202005101428252_date.designer.cs">
+      <DependentUpon>202005101428252_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005102144002_warehouse.cs" />
+    <Compile Include="Migrations\202005102144002_warehouse.designer.cs">
+      <DependentUpon>202005102144002_warehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +119,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004272342277_logins.resx">
       <DependentUpon>202004272342277_logins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005091450223_receipt.resx">
+      <DependentUpon>202005091450223_receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005101428252_date.resx">
+      <DependentUpon>202005101428252_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005102144002_warehouse.resx">
+      <DependentUpon>202005102144002_warehouse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

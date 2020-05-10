@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="IArticleService.cs" />
     <Compile Include="IContractorService.cs" />
     <Compile Include="IEmployeeService.cs" />
     <Compile Include="IInventoryService.cs" />
+    <Compile Include="Implementation\ArticleService.cs" />
     <Compile Include="Implementation\ContractorService.cs" />
     <Compile Include="Implementation\EmployeeService.cs" />
     <Compile Include="Implementation\InventoryService.cs" />

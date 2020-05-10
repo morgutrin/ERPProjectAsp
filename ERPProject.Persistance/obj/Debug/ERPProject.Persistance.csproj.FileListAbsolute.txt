@@ -23,3 +23,6 @@ C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ER
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.addActive.resources
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.addedcontractors.resources
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.logins.resources
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.receipt.resources
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.date.resources
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.warehouse.resources
