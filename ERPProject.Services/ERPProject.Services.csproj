@@ -52,19 +52,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Exceptions\AmountLessThanZeroException.cs" />
     <Compile Include="IArticleService.cs" />
     <Compile Include="IContractorService.cs" />
     <Compile Include="IEmployeeService.cs" />
+    <Compile Include="IEventService.cs" />
     <Compile Include="IInventoryService.cs" />
     <Compile Include="Implementation\ArticleService.cs" />
     <Compile Include="Implementation\ContractorService.cs" />
     <Compile Include="Implementation\EmployeeService.cs" />
+    <Compile Include="Implementation\EventService.cs" />
     <Compile Include="Implementation\InventoryService.cs" />
     <Compile Include="ILoginService.cs" />
     <Compile Include="Implementation\LoginService.cs" />
+    <Compile Include="Implementation\WarehouseService.cs" />
+    <Compile Include="IWarehouseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EmailSender\EmailSender.csproj">
+      <Project>{26362060-ae31-484c-a93d-195985218944}</Project>
+      <Name>EmailSender</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ERPProject.Entity\ERPProject.Entity.csproj">
       <Project>{e00d45fe-58f3-4856-9076-846199475425}</Project>
       <Name>ERPProject.Entity</Name>
@@ -81,6 +90,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

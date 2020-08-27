@@ -19,6 +19,10 @@ namespace ERPProject.Entity
         [ForeignKey("Contractor")]
         public int ContractorId { get; set; }
         public virtual Contractor Contractor { get; set; }
+        [ForeignKey("Employee")]
+        public virtual int EmployeeId { get; set; }
+
+        public virtual Employee Employee { get; set; }
         public DateTime CreationDate { get; set; }
     }
 }

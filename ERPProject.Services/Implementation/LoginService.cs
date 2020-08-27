@@ -17,9 +17,17 @@ namespace ERPProject.Services.Implementation
         {
             _context = context;
         }
+
+        public event CreateOperatorEventHandler OnOperatorCreated;
+
         public Operator GetOperator(string login)
         {
             return _context.Operators.FirstOrDefault(x => x.Login.Equals(login));
+        }
+
+        public Operator GetOperator(int id)
+        {
+            return _context.Operators.Single(x => x.Id.Equals(id));
         }
 
         public string[] GetRoles(string login)
@@ -34,11 +42,19 @@ namespace ERPProject.Services.Implementation
             return _context.Roles.ToList();
         }
 
+        public void DeleteOperator(int id)
+        {
+            var operatorToDelete = GetOperator(id);
+            _context.Operators.Remove(operatorToDelete);
+            _context.SaveChanges();
+        }
+
         public void CreateOperator(Operator oOperator, int[] selectedRoles)
         {
             _context.Operators.Add(oOperator);
             _context.SaveChanges();
             var getOperator = GetOperator(oOperator.Login);
+            var employee = _context.Operators.FirstOrDefault(x => x.EmployeeId.Equals(oOperator.EmployeeId));
             List<OperatorRoles> roles = new List<OperatorRoles>();
             foreach (var operatorRole in selectedRoles)
             {
@@ -50,8 +66,9 @@ namespace ERPProject.Services.Implementation
                 });
 
             }
-
+            //  OnOperatorCreated?.Invoke(getOperator, employee.Employee.Email);
             _context.SaveChanges();
+
 
         }
 
@@ -71,11 +88,21 @@ namespace ERPProject.Services.Implementation
             }).ToArray();
             foreach (var role in roles)
             {
-                temp += role.Name;
+                temp += role.Name + ", ";
             }
 
 
             return temp;
+        }
+
+        public int GetEmployeeId(string login)
+        {
+            return _context.Operators.FirstOrDefault(x => x.Login.Equals(login)).EmployeeId;
+        }
+
+        public bool IsLoginExist(string login)
+        {
+            return _context.Operators.Any(x => x.Login.Equals(login));
         }
     }
 }

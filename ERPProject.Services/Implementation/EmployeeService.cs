@@ -1,4 +1,5 @@
-﻿using ERPProject.Entity;
+﻿using EmailSender;
+using ERPProject.Entity;
 using ERPProject.Persistance;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,16 @@ namespace ERPProject.Services.Implementation
         public EmployeeService(ApplicationDbContext context)
         {
             _context = context;
+
         }
+
+
+        public CreateEmployeeEventHandler CreateEmployeeEventHandler { get; set; }
+        public event CreateEmployeeEventHandler OnEmployeeCreated;
 
         public void Create(Employee newEmployee)
         {
+            OnEmployeeCreated?.Invoke(newEmployee.Email, newEmployee.FullName);
             _context.Employees.Add(newEmployee);
             _context.SaveChanges();
         }

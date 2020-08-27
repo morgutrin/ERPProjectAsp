@@ -3,6 +3,7 @@ using ERPProject.Entity;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Security.AccessControl;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ERPProject.Models.Employee
@@ -10,7 +11,7 @@ namespace ERPProject.Models.Employee
     public class EmployeeCreateViewModel
     {
 
-
+        public HttpPostedFileBase ImageFile { get; set; }
         [Required(ErrorMessage = "Employee field is required"), RegularExpression(@"^[A-Z]{3,3}[0-9]{3}$")]
         public string EmployeeNo { get; set; }
 

@@ -65,8 +65,11 @@
     <Compile Include="Country.cs" />
     <Compile Include="CountrySign.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="ExternalReceipt.cs" />
     <Compile Include="ExternalReceiptRow.cs" />
+    <Compile Include="ExternalRelease.cs" />
+    <Compile Include="ExternalReleaseRow.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="InventoryGroup.cs" />
     <Compile Include="Operator.cs" />

@@ -16,3 +16,5 @@ C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\ERPPr
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\ERPProject.Persistance.dll.config
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\EntityFramework.xml
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\EmailSender.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Services\bin\Debug\EmailSender.pdb

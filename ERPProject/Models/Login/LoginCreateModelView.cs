@@ -12,6 +12,7 @@ namespace ERPProject.Models.Login
     public class LoginCreateModelView
     {
         [Required]
+        [Remote("IsLoginExist", "Login", ErrorMessage = "Login exists in database")]
         public string Login { get; set; }
         [DataType(DataType.Password)]
         [Required]

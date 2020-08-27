@@ -7,6 +7,7 @@ namespace ERPProject.Models.Employee
     {
         public int Id { get; set; }
 
+        public string ImagePath { get; set; }
         public string EmployeeNo { get; set; }
 
         public string FirstName { get; set; }
@@ -16,7 +17,7 @@ namespace ERPProject.Models.Employee
 
 
         public string Gender { get; set; }
-        public string ImageUrl { get; set; }
+
         public DateTime BirthDate { get; set; }
         public DateTime DateJoined { get; set; }
         public string Email { get; set; }

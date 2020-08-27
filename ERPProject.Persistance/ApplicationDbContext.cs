@@ -14,7 +14,9 @@ namespace ERPProject.Persistance
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
         }
 
-
+        public DbSet<Event> Events { get; set; }
+        public DbSet<ExternalRelease> ExternalReleases { get; set; }
+        public DbSet<ExternalReleaseRow> ExternalReleaseRows { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<ContactPerson> ContactPersons { get; set; }
         public DbSet<Employee> Employees { get; set; }
@@ -26,6 +28,8 @@ namespace ERPProject.Persistance
         public DbSet<ArticleGroup> ArticleGroups { get; set; }
         public DbSet<ExternalReceiptRow> ExternalReceiptRows { get; set; }
         public DbSet<ExternalReceipt> ExternalReceipts { get; set; }
+        public DbSet<Warehouse> Warehouses { get; set; }
+
 
 
     }

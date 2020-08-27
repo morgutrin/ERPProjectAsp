@@ -22,3 +22,31 @@ select,
 textarea {
     max-width: 280px;
 }
+
+th {
+    color: #49a2e7;
+}
+
+h2 {
+    color: #49a2e7;
+}
+
+.navbar {
+    background: #49a2e7;
+}
+
+.action-link-a {
+    color: black;
+}
+
+    .action-link-a:hover {
+        color: white;
+    }
+
+a.kam-logo {
+    background: url(../Images/logo.png) no-repeat top left;
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-indent: -9999px; /* hides the link text */
+}

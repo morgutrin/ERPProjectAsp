@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ERPProject.Models.Warehouse.ExternalReleaseIndexModelView>
+
+@{
+    /**/
+
+    ViewBag.Title = "ExternalReleases";
+}
+
+<h2>ExternalReleaseIndex</h2>
+@Html.Action("GetEmployeeExternalReleases", "Warehouse")
+<p>
+    @Html.ActionLink("Create New", "CreateExternalRelease")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "ExternalReleaseDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,80 +1,82 @@
-﻿
+﻿@model IEnumerable<ERPProject.Models.Warehouse.ExternalReceipt.ExternalReceiptIndexModelView>
+
 @{
+    /**/
+
     ViewBag.Title = "ExternalReceiptIndex";
 }
 
-<h2>ExternalReceiptIndex</h2>
+<h2>ExternalReceipts</h2>
 
-<div class="container">
-    <div class="master">
-        <h2>External Receipt</h2>
-        <table class="table table-responsive">
-            <tr>
-                <td>External Receipt Number</td>
-                <td>
-                    <input type="text" id="ExtRecNo" class="form-control" />
-                    <span class="error">External Receipt No Required</span>
-                </td>
-                <td>Created on</td>
-                <td>
-                    <input type="text" id="ExtRecDate" class="form-control" />
-                    <span class="error">Date Required</span>
-                </td>
-                <td>
-                    <select id="contractor" class="pc form-control" onchange="LoadContractor(this)">
-                        <option>Select</option>
-                    </select>
-                    <span class="error">Select Contractor</span>
-                </td>
-
-            </tr>
-        </table>
-    </div>
-    <div class="details">
-        <h2>Articles</h2>
-        <table class="table table-responsive">
-            <tr>
-                <td>Article</td>
-                <td>Price</td>
-                <td>Amount</td>
-                <td>&nbsp;</td>
-
-            </tr>
-            <tr class="mycontainer" id="mainrow"></tr>
+<p>
+    @Html.ActionLink("Create New", "CreateExternalReceipt")
+</p>
+<table class="table" id="externalReceiptsTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
             <td>
-                <select id="article" class="pc form-control" onchange="LoadArticles(this)">
-                    <option>Select</option>
-                </select>
-                <span class="error">Select Article</span>
-            </td>
-           
-            <td>
-                <input type="text" id="price" class="form-control" />
-                <span class="error">Price Required</span>
-            </td>
-          
-            <td>
-                <input type="text" id="amount" class="form-control" />
-                <span class="error">Amount Required</span>
+                @Html.DisplayFor(modelItem => item.Code)
             </td>
             <td>
-                <input type="button" id="add" value="Add" style="width: 80px" class="btn btn-success" />
+                @Html.DisplayFor(modelItem => item.ContractorName)
             </td>
-        </table>
-        <div id="ExtRows">
-            <table class="table table-responsive" id="ExtRowsItems"></table>
-            <span id="extRowsError" style="color:red"></span>
-        </div>
-        <div style="text-align: right">
-            <input type="button" id="submit" value="Save External Receipt" class="btn btn-warning" />
-        </div>
-    </div>
-</div>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
 
-<script type="text/javascript">
-    $(function () {
-        $('#ExtRecDate').datepicker({
-            dateFormat: 'dd-mm-yy'
-        })
-    })
-</script>
+                @Html.ActionLink("Details", "ExternalReceiptDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteExternalReceipt", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+@section scripts
+{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#externalReceiptsTable').DataTable({
+                "language": {
+                    "lengthMenu": "Show _MENU_ records",
+                    "zeroRecords": "Nothing",
+                    "info": "Page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records",
+                    "infoFiltered": "(filter)",
+                    "sSearch": "Search:",
+                    "oPaginate": {
+                        "sFirst": "First",
+                        "sLast": "Last",
+                        "sNext": "Next",
+                        "sPrevious": "Previous"
+                    },
+                }
+            });
+        });
+
+
+    </script>
+}

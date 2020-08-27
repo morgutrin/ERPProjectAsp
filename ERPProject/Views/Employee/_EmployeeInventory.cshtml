@@ -22,7 +22,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Code)
+                @Html.ActionLink(item.Code, "Details", "Inventory", new { id = item.Id },null)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

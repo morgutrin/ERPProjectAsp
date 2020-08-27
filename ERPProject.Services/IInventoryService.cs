@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERPProject.Services
 {
+
     public interface IInventoryService
     {
         void Create(Inventory newInventory);

@@ -1,0 +1,10 @@
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\bin\Debug\EmailSender.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\bin\Debug\EmailSender.pdb
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\obj\Debug\EmailSender.csprojAssemblyReference.cache
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\obj\Debug\EmailSender.csproj.CoreCompileInputs.cache
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\obj\Debug\EmailSender.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\obj\Debug\EmailSender.pdb
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\bin\Debug\ERPProject.Entity.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\bin\Debug\ERPProject.Entity.pdb
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\bin\Debug\ERPProject.Entity.dll.config
+C:\Users\Racki Kamil\source\repos\ERPProject\EmailSender\obj\Debug\EmailSender.csproj.CopyComplete

@@ -59,37 +59,21 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Migrations\202004081756229_elosa.cs" />
-    <Compile Include="Migrations\202004081756229_elosa.designer.cs">
-      <DependentUpon>202004081756229_elosa.cs</DependentUpon>
+    <Compile Include="Migrations\202006042142316_External Release.cs" />
+    <Compile Include="Migrations\202006042142316_External Release.designer.cs">
+      <DependentUpon>202006042142316_External Release.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004081901102_elosa1.cs" />
-    <Compile Include="Migrations\202004081901102_elosa1.designer.cs">
-      <DependentUpon>202004081901102_elosa1.cs</DependentUpon>
+    <Compile Include="Migrations\202006071917177_amount price.cs" />
+    <Compile Include="Migrations\202006071917177_amount price.designer.cs">
+      <DependentUpon>202006071917177_amount price.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004082154507_add Active.cs" />
-    <Compile Include="Migrations\202004082154507_add Active.designer.cs">
-      <DependentUpon>202004082154507_add Active.cs</DependentUpon>
+    <Compile Include="Migrations\202006142110579_events.cs" />
+    <Compile Include="Migrations\202006142110579_events.designer.cs">
+      <DependentUpon>202006142110579_events.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004091553015_added contractors.cs" />
-    <Compile Include="Migrations\202004091553015_added contractors.designer.cs">
-      <DependentUpon>202004091553015_added contractors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004272342277_logins.cs" />
-    <Compile Include="Migrations\202004272342277_logins.designer.cs">
-      <DependentUpon>202004272342277_logins.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005091450223_receipt.cs" />
-    <Compile Include="Migrations\202005091450223_receipt.designer.cs">
-      <DependentUpon>202005091450223_receipt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005101428252_date.cs" />
-    <Compile Include="Migrations\202005101428252_date.designer.cs">
-      <DependentUpon>202005101428252_date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005102144002_warehouse.cs" />
-    <Compile Include="Migrations\202005102144002_warehouse.designer.cs">
-      <DependentUpon>202005102144002_warehouse.cs</DependentUpon>
+    <Compile Include="Migrations\202006152103007_notific.cs" />
+    <Compile Include="Migrations\202006152103007_notific.designer.cs">
+      <DependentUpon>202006152103007_notific.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,29 +89,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004081756229_elosa.resx">
-      <DependentUpon>202004081756229_elosa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006042142316_External Release.resx">
+      <DependentUpon>202006042142316_External Release.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004081901102_elosa1.resx">
-      <DependentUpon>202004081901102_elosa1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006071917177_amount price.resx">
+      <DependentUpon>202006071917177_amount price.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004082154507_add Active.resx">
-      <DependentUpon>202004082154507_add Active.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006142110579_events.resx">
+      <DependentUpon>202006142110579_events.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004091553015_added contractors.resx">
-      <DependentUpon>202004091553015_added contractors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004272342277_logins.resx">
-      <DependentUpon>202004272342277_logins.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005091450223_receipt.resx">
-      <DependentUpon>202005091450223_receipt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005101428252_date.resx">
-      <DependentUpon>202005101428252_date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005102144002_warehouse.resx">
-      <DependentUpon>202005102144002_warehouse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006152103007_notific.resx">
+      <DependentUpon>202006152103007_notific.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

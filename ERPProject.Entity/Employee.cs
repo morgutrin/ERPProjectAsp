@@ -39,5 +39,6 @@ namespace ERPProject.Entity
         public bool IsActive { get; set; }
         public virtual ICollection<Inventory> Inventories { get; set; }
         public virtual ICollection<Operator> Operators { get; set; }
+        public virtual ICollection<Event> Events { get; set; }
     }
 }

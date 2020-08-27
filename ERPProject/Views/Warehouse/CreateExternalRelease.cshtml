@@ -1,0 +1,117 @@
+﻿@model ERPProject.Models.Warehouse.ExternalRelease.ExternalReleaseCreateModelView
+
+
+
+<h2>Create external release</h2>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+
+    function AddRow() {
+        var row = $(
+            '<tr> <td><select id="articleSelect" name="articleSelect" class="form-control article"></select></td><td><input class="form-control" id="amount" name="amount" type="text" value="" /></td><td><input class="form-control" id="price" name="price" type="text" value="" /></td></tr>');
+        getOption(row.find('.article'));
+        $('#externalRows').append(row);
+
+
+    }
+    function getOption(select) {
+        $.ajax({
+            type: "POST",
+            url: "/Warehouse/GetArticles",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                $.each(response, function () {
+                    select.append($("<option></option>").val(this['Id']).html(this['Name']));
+                });
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+
+    }
+
+    $(document).ready(function () {
+
+        getOption($('.article'));
+    });
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Contractor", new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ContractorId, (IEnumerable<SelectListItem>)@ViewBag.Contractors, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ContractorId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+
+            <table id="externalRows" class="table">
+
+                <tr>
+                    <td>Article</td>
+
+                    <td>Amount</td>
+
+                    <td>Price</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <select id="articleSelect" name="articleSelect" class="form-control article"></select>
+                    </td>
+                    <td>
+                        @Html.TextBox("amount", null, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBox("price", null, new { @class = "form-control" })
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="form-group text-center">
+            <div>
+                <input type="button" value="Add Row" class="btn btn-default" onclick="AddRow()" />
+            </div>
+        </div>
+        <hr />
+        <div class="form-group text-center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ExternalReleaseIndex")
+</div>
+

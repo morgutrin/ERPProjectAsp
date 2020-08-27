@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ERPProject.Controllers
 {
+    [Authorize(Roles = "warehouser, admin")]
     public class ContractorController : Controller
     {
         private readonly IContractorService cService;
@@ -81,6 +82,12 @@ namespace ERPProject.Controllers
                 Address = model.Address
             };
             return View(cDetails);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            cService.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

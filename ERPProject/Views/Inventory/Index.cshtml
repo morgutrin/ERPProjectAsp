@@ -10,32 +10,32 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table" id="inventoryTable">
-    
+
     <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeFullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Code)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InventoryNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InventoryGroup)
-        </th>
-        <th></th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryGroup)
+            </th>
+            <th></th>
+        </tr>
     </thead>
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                @Html.ActionLink(item.EmployeeFullName, "Details", "Employee", new { id = item.EmployeeId }, null)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Code)
@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.InventoryGroup)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
     }
@@ -63,7 +63,7 @@
 {
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#inventoryTable').DataTable({
                 "language": {
                     "lengthMenu": "Show _MENU_ records",

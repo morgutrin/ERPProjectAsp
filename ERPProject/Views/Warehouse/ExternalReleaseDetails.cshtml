@@ -1,0 +1,84 @@
+﻿@model ERPProject.Models.Warehouse.ExternalRelease.ExternalReleaseDetailsModelView
+
+@{
+    ViewBag.Title = "ExternalReleaseDetails";
+}
+
+<h2>ExternalReleaseDetails</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+    </dl>
+</div>
+<h4>Articles:</h4>
+<table class="table">
+    <tr>
+        <th>
+            Article
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Price
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model.ExternalReleaseRows)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Article.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<p>
+
+    @Html.ActionLink("Back to List", "ExternalReleaseIndex")
+</p>

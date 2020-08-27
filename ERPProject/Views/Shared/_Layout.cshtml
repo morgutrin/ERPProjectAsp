@@ -16,25 +16,45 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ERPIK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ERPIK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color:black" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                   
-                    <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
-                    <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
-                    <li>@Html.ActionLink("Contractors", "Index", "Contractor")</li>
-                    <li>@Html.ActionLink("Operators", "Index", "Login")</li>
-                    <li><div class="dropdown" style="padding-top: 10px">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Configuration
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            @Html.ActionLink("Employees", "Index", "Employee") <br/>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+
+                    <li>@Html.ActionLink("Employees", "Index", "Employee", null, new { style = "color:black", @class = "action-link-a" })</li>
+                    <li>@Html.ActionLink("Inventory", "Index", "Inventory", null, new { style = "color:black", @class = "action-link-a" })</li>
+                    <li>@Html.ActionLink("Contractors", "Index", "Contractor", null, new { style = "color:black", @class = "action-link-a" })</li>
+
+
+                    <li>@Html.ActionLink("Article", "Index", "Article", null, new { style = "color:black", @class = "action-link-a" })</li>
+                    <li>
+                        <div class="dropdown" style="padding-top: 10px">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Warehouse
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @Html.ActionLink("External Receipts", "ExternalReceiptIndex", "Warehouse")<br />
+                                @Html.ActionLink("External Releases", "ExternalReleaseIndex", "Warehouse")
+
+                            </div>
                         </div>
-                    </div></li>
+                    </li>
+                    <li>
+                        <div class="dropdown" style="padding-top: 10px; padding-left: 5px">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Configuration
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @Html.ActionLink("Operators", "Index", "Login") <br />
+
+                            </div>
+                        </div>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Login", null, new { style = "color:black", @class = "action-link-a" })</li>
+                    }
+
                 </ul>
             </div>
         </div>

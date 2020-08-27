@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ERPProject.Models.Employee
 {
     public class EmployeeEditViewModel
     {
         public int ID { get; set; }
+        public HttpPostedFileBase ImageFile { get; set; }
         [Required(ErrorMessage = "Employee field is required"), RegularExpression(@"^[A-Z]{3,3}[0-9]{3}$")]
         public string EmployeeNo { get; set; }
 

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace ERPProject.Controllers
 {
-
+    [Authorize(Roles = "admin")]
     public class InventoryController : Controller
     {
         // GET: Inventory
@@ -33,6 +33,7 @@ namespace ERPProject.Controllers
             {
                 Id = x.Id,
                 Code = x.Code,
+                EmployeeId = x.EmployeeId,
                 EmployeeFullName = x.Employee.FullName,
                 InventoryGroup = x.InventoryGroup,
                 InventoryNumber = x.InventoryNumber,
@@ -130,6 +131,11 @@ namespace ERPProject.Controllers
 
         }
 
+        public ActionResult Delete(int id)
+        {
+            _inventoryService.Delete(id);
+            return RedirectToAction("Index");
+        }
 
 
         // GET: Inventory/Delete/5

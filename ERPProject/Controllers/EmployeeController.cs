@@ -1,17 +1,20 @@
-﻿using ERPProject.Entity;
+﻿using EmailSender;
+using ERPProject.Entity;
 using ERPProject.Models.Employee;
 using ERPProject.Services;
 using System;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
-
 namespace ERPProject.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class EmployeeController : Controller
     {
         // GET: Employee
@@ -21,10 +24,13 @@ namespace ERPProject.Controllers
         {
 
             _employeeService = employeeService;
+
             _inventoryService = inventoryService;
+
         }
         public ActionResult Index()
         {
+
             var employees = _employeeService.GetAll().Select(employee => new EmployeeIndexViewModel
             {
                 Id = employee.Id,
@@ -50,9 +56,15 @@ namespace ERPProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
+                string extension = Path.GetExtension(model.ImageFile.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = "~/Images/" + fileName;
+                fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
+                model.ImageFile.SaveAs(fileName);
                 var employee = new Employee
                 {
-
+                    ImageUrl = path,
                     EmployeeNo = model.EmployeeNo,
                     FirstName = model.FirstName,
                     SecondName = model.SecondName,
@@ -72,7 +84,7 @@ namespace ERPProject.Controllers
 
 
                 };
-
+                _employeeService.OnEmployeeCreated += new EmailSenderService().SendWelcomeMail;
 
                 _employeeService.Create(employee);
                 return RedirectToAction("Index");
@@ -83,6 +95,7 @@ namespace ERPProject.Controllers
         public ActionResult Edit(int id)
         {
             var model = _employeeService.GetById(id);
+
             if (model == null)
             {
                 return HttpNotFound();
@@ -97,8 +110,8 @@ namespace ERPProject.Controllers
                 LastName = model.LastName,
                 Gender = model.Gender,
                 Phone = model.Phone,
-                BirthDate = model.BirthDate.Date,
-                DateJoined = model.DateJoined.Date,
+                BirthDate = model.BirthDate,
+                DateJoined = model.DateJoined,
                 Email = model.Email,
                 IdDocumentNo = model.IdDocumentNo,
                 PaymentMethod = model.PaymentMethod,
@@ -112,12 +125,23 @@ namespace ERPProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(EmployeeEditViewModel model)
         {
+
+
             if (ModelState.IsValid)
             {
+                string path = "";
                 var employee = _employeeService.GetById(model.ID);
-                if (employee == null)
+                if (model.ImageFile != null)
                 {
-                    return HttpNotFound();
+                    string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
+                    string extension = Path.GetExtension(model.ImageFile.FileName);
+                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                    path = "~/Images/" + fileName;
+                    fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
+                    model.ImageFile.SaveAs(fileName);
+                    string pathy = "C:/Users/Racki Kamil/source/repos/ERPProject/ERPProject/Images/" + Url.Content(employee.ImageUrl.Substring(employee.ImageUrl.LastIndexOf("/", StringComparison.Ordinal) + 1));
+                    System.Diagnostics.Debug.WriteLine(pathy);
+                    System.IO.File.Delete(pathy);
                 }
 
                 employee.EmployeeNo = model.EmployeeNo;
@@ -134,11 +158,17 @@ namespace ERPProject.Controllers
                 employee.Address = model.Address;
                 employee.City = model.City;
                 employee.PostCode = model.PostCode;
-                employee.ImageUrl = employee.ImageUrl;
+                if (model.ImageFile != null)
+                {
+                    employee.ImageUrl = path;
+                }
+
+
+
                 _employeeService.Update(employee);
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(model);
         }
 
         public ActionResult Details(int id)
@@ -150,9 +180,35 @@ namespace ERPProject.Controllers
                 return HttpNotFound();
             }
 
+            if (model.ImageUrl == null)
+            {
+                EmployeeDetailsViewModel detailsViewModel1 = new EmployeeDetailsViewModel()
+                {
+                    Id = model.Id,
+                    ImagePath = "~/Images/brak.png",
+                    EmployeeNo = model.EmployeeNo,
+                    FirstName = model.FirstName,
+                    SecondName = model.SecondName,
+                    LastName = model.LastName,
+                    Gender = model.Gender,
+                    Phone = model.Phone,
+                    BirthDate = model.BirthDate,
+                    DateJoined = model.DateJoined,
+                    Email = model.Email,
+                    IdDocumentNo = model.IdDocumentNo,
+                    PaymentMethod = model.PaymentMethod,
+                    Address = model.Address,
+                    City = model.City,
+                    PostCode = model.PostCode
+                };
+                ViewBag.ImageUrl = "~/Images/brak.png";
+                return View(detailsViewModel1);
+            }
+
             EmployeeDetailsViewModel detailsViewModel = new EmployeeDetailsViewModel()
             {
                 Id = model.Id,
+                ImagePath = model.ImageUrl,
                 EmployeeNo = model.EmployeeNo,
                 FirstName = model.FirstName,
                 SecondName = model.SecondName,
@@ -168,6 +224,7 @@ namespace ERPProject.Controllers
                 City = model.City,
                 PostCode = model.PostCode
             };
+            ViewBag.ImageUrl = model.ImageUrl;
             return View(detailsViewModel);
         }
 
@@ -195,9 +252,11 @@ namespace ERPProject.Controllers
         public PartialViewResult ShowInventory()
         {
             var id = (int)TempData["empId"];
+            ViewBag.EmpId = id;
             var inventories = _inventoryService.GetAll().Where(x => x.Employee.Id.Equals(id))
                 .Select(x => new EmployeeInventoryViewModel
                 {
+                    Id = x.Id,
                     Code = x.Code,
                     Name = x.Name,
                     InventoryNumber = x.InventoryNumber,
