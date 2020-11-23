@@ -22,6 +22,7 @@ namespace ERPProject
             container.RegisterType<IArticleService, ArticleService>();
             container.RegisterType<IWarehouseService, WarehouseService>();
             container.RegisterType<IEventService, EventService>();
+            container.RegisterType<IOrderService, OrderService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

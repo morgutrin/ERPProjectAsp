@@ -1,5 +1,10 @@
-﻿body {
-    padding-top: 50px;
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
@@ -34,7 +39,9 @@ h2 {
 .navbar {
     background: #49a2e7;
 }
-
+.navbar-inverse .navbar-nav > li > a{
+    color: black;
+}
 .action-link-a {
     color: black;
 }
@@ -49,4 +56,16 @@ a.kam-logo {
     width: 100px;
     height: 100px;
     text-indent: -9999px; /* hides the link text */
+}
+
+.event-box {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    min-height: 150px;
+}
+
+.btn-color {
+   padding-top:13px;
 }

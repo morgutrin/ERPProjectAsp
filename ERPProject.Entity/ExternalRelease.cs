@@ -15,6 +15,9 @@ namespace ERPProject.Entity
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }
         public string Code { get; set; }
+        [ForeignKey("Order")]
+        public int OrderId { get; set; }
+        public virtual Order Order { get; set; }
         [ForeignKey("Employee")]
         public int CreatedById { get; set; }
         public virtual Employee Employee { get; set; }

@@ -60,9 +60,15 @@
                 @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.Label("Contractor", new { @class = "control-label col-md-2"})
+            @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.OrderId, (IEnumerable<SelectListItem>)@ViewBag.Orders, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Contractor", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.ContractorId, (IEnumerable<SelectListItem>)@ViewBag.Contractors, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContractorId, "", new { @class = "text-danger" })

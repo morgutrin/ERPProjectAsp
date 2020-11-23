@@ -2,6 +2,7 @@
 using DHTMLX.Scheduler;
 using DHTMLX.Scheduler.Data;
 using ERPProject.Entity;
+using ERPProject.Models.Event;
 using ERPProject.Services;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,15 @@ namespace ERPProject.Controllers
         }
         public ActionResult Index()
         {
+            var events = _eventService.GetUserEvents(_loginService.GetEmployeeId(User.Identity.Name)).Select(x => new EventCreateModelView
+            {
+                Id = x.Id,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                Text = x.Text
+            }).ToList();
 
-
-            return View();
+            return View(events);
         }
 
         public ActionResult SignOut()

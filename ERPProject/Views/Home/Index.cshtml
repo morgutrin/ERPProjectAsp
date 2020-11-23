@@ -1,21 +1,41 @@
-﻿@{
+﻿@model IEnumerable<ERPProject.Models.Event.EventCreateModelView>
+@{
     Layout = "../Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Scheduler</title>
+
     <style>
         body {
-            background-color: #eee;
+            background-color: gainsboro;
         }
     </style>
+
 </head>
 <body>
-<h1></h1>
-<!--<div style="height:800px;width:1300px;margin:0 auto">
-    Html.Raw(Model.Render())
-</div> -->
+    <h1></h1>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-3">
+                    <div class="event-box text-center">
+                        <p>@Html.DisplayFor(modelItem => item.StartDate)</p>
+                        <p>@Html.DisplayFor(modelItem => item.EndDate)</p>
+                        <p>@Html.DisplayFor(modelItem => item.Text)</p>
+                    </div>
+                </div>
+            }
+            <div class="col-sm-3">
+                <div class="event-box text-center">
+                  add
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>

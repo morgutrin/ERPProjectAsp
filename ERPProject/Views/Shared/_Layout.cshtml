@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - ERPIK</title>
+   
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,45 +18,110 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ERPIK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color:black" })
+              <!--  @Html.ActionLink("ERPIK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color:black" }) -->
+                <a href='@Url.Action("Index", "Home")'>
+                    <img style="height:75px;width:100px" src='@Url.Content("~/Images/erpik_logo.png")' />
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    <li>@Html.ActionLink("Employees", "Index", "Employee", null, new { style = "color:black", @class = "action-link-a" })</li>
-                    <li>@Html.ActionLink("Inventory", "Index", "Inventory", null, new { style = "color:black", @class = "action-link-a" })</li>
-                    <li>@Html.ActionLink("Contractors", "Index", "Contractor", null, new { style = "color:black", @class = "action-link-a" })</li>
+                    <li class="btn-color">
+                        <a href="@Url.Action("Index", "Employee")" class="btn btn-dark" >
+                            <i class="fa fa-address-book" aria-hidden="true"></i>
+                            <span>
+                                <strong>Employees</strong>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="btn-color">
+                        <a href="@Url.Action("Index", "Inventory")" class="btn btn-dark">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            <span>
+                                <strong>Inventory</strong>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="btn-color">
+                        <a href="@Url.Action("Index", "Contractor")" class="btn btn-dark">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span>
+                                <strong>Contractor</strong>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="btn-color">
+                        <a href="@Url.Action("Index", "Article")" class="btn btn-dark">
+                            <i class="fa fa-sitemap" aria-hidden="true"></i>
+                            <span>
+                                <strong>Articles</strong>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="btn-color">
+                        <a href="@Url.Action("Index", "Order")" class="btn btn-dark">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <span>
+                                <strong>Orders</strong>
+                            </span>
+                        </a>
+                    </li>
 
 
-                    <li>@Html.ActionLink("Article", "Index", "Article", null, new { style = "color:black", @class = "action-link-a" })</li>
                     <li>
-                        <div class="dropdown" style="padding-top: 10px">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Warehouse
+                        <div class="dropdown text-center" style="padding-top: 23px">
+                            <button class="btn btn-secondary dropdown-toggle text-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <strong>Warehouse</strong>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                @Html.ActionLink("External Receipts", "ExternalReceiptIndex", "Warehouse")<br />
-                                @Html.ActionLink("External Releases", "ExternalReleaseIndex", "Warehouse")
+
+                                <a href="@Url.Action("ExternalReceiptIndex", "Warehouse")" class="btn btn-dark">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                    <span>
+                                        <strong>External Receipts</strong>
+                                    </span>
+                                </a>
+                                <a href="@Url.Action("ExternalReleaseIndex", "Warehouse")" class="btn btn-dark">
+                                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                    <span>
+                                        <strong>External Releases</strong>
+                                    </span>
+                                </a>
+
+
 
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="dropdown" style="padding-top: 10px; padding-left: 5px">
+                        <div class="dropdown text-center" style="padding-top: 23px; padding-left: 5px">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Configuration
+                                <strong>Configuration</strong>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                @Html.ActionLink("Operators", "Index", "Login") <br />
+                                <a href="@Url.Action("Index", "Login")" class="btn btn-dark">
+                                    <i class="fa fa-address-card" aria-hidden="true"></i>
+
+                                    <span>
+                                        <strong>Operators</strong>
+                                    </span>
+                                </a> <br />
 
                             </div>
                         </div>
                     </li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Logout", "Logout", "Login", null, new { style = "color:black", @class = "action-link-a" })</li>
+                        <li class="btn-color">
+                            <a href="@Url.Action("Index", "Order")" class="btn btn-dark">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <span>
+                                    <strong>Logout</strong>
+                                </span>
+                            </a>
+                        </li>
                     }
-
+                   
                 </ul>
             </div>
         </div>

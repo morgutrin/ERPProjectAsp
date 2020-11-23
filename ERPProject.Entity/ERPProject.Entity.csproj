@@ -74,9 +74,12 @@
     <Compile Include="InventoryGroup.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="OperatorRoles.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderRow.cs" />
     <Compile Include="PaymentMethod.cs" />
     <Compile Include="PaymentRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reminder.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Warehouse.cs" />

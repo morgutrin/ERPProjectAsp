@@ -10,6 +10,7 @@ namespace ERPProject.Models.Warehouse.ExternalRelease
     public class ExternalReleaseCreateModelView
     {
         public string Code { get; set; }
+        public int OrderId { get; set; }
 
         public int ContractorId { get; set; }
         [Display()]

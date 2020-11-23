@@ -40,5 +40,6 @@ namespace ERPProject.Entity
         public virtual ICollection<Inventory> Inventories { get; set; }
         public virtual ICollection<Operator> Operators { get; set; }
         public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Reminder> Reminders { get; set; }
     }
 }

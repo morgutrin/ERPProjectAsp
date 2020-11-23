@@ -11,6 +11,7 @@ namespace ERPProject.Models.Warehouse.ExternalReceipt
     public class ExternalReceiptCreateModelView
     {
         public string Code { get; set; }
+        public int OrderId { get; set; }
 
         public int ContractorId { get; set; }
         [Display()]

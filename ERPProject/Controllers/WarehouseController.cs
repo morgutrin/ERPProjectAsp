@@ -19,13 +19,15 @@ namespace ERPProject.Controllers
         private readonly IArticleService _aService;
         private readonly IWarehouseService _wService;
         private readonly ILoginService _lService;
+        private readonly IOrderService _oService;
 
-        public WarehouseController(IContractorService service, IArticleService aService, IWarehouseService wService, ILoginService lService)
+        public WarehouseController(IContractorService service, IArticleService aService, IWarehouseService wService, ILoginService lService, IOrderService oService)
         {
             _cService = service;
             _aService = aService;
             _wService = wService;
             _lService = lService;
+            _oService = oService;
         }
 
         public PartialViewResult GetEmployeeExternalReleases()
@@ -44,6 +46,7 @@ namespace ERPProject.Controllers
             {
                 Id = x.Id,
                 Code = x.Code,
+                OrderCode = x.Order.Code,
                 EmployeeFullName = x.Employee.FullName,
                 ContractorName = x.Contractor.Name,
                 CreationDate = x.CreationDate
@@ -56,6 +59,7 @@ namespace ERPProject.Controllers
             {
                 Id = x.Id,
                 Code = x.Code,
+                OrderCode = x.Order.Code,
                 EmployeeFullName = x.Employee.FullName,
                 ContractorName = x.Contractor.Name,
                 CreationDate = x.CreatedOn
@@ -66,6 +70,7 @@ namespace ERPProject.Controllers
         {
             @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
             @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+            @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
             ExternalReceiptCreateModelView model = new ExternalReceiptCreateModelView();
             model.Code = "CER/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
                          DateTime.Now.Second + "/" + DateTime.Now.Millisecond;
@@ -81,6 +86,7 @@ namespace ERPProject.Controllers
                 {
                     Code = model.Code,
                     ContractorId = model.ContractorId,
+                    OrderId = model.OrderId,
                     CreationDate = DateTime.Now,
                     EmployeeId = _lService.GetEmployeeId(User.Identity.Name)
                 };
@@ -104,12 +110,14 @@ namespace ERPProject.Controllers
 
             @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
             @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+            @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
             return View(model);
         }
         public ActionResult CreateExternalRelease()
         {
             @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
             @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+            @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
             ExternalReleaseCreateModelView model = new ExternalReleaseCreateModelView();
             model.Code = "CERel/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
                          DateTime.Now.Second + "/" + DateTime.Now.Millisecond;
@@ -125,6 +133,7 @@ namespace ERPProject.Controllers
                 {
                     Code = model.Code,
                     ContractorId = model.ContractorId,
+                    OrderId = model.OrderId,
                     CreatedOn = DateTime.Now,
                     CreatedById = _lService.GetEmployeeId(User.Identity.Name)
                 };
@@ -145,10 +154,15 @@ namespace ERPProject.Controllers
 
                 return RedirectToAction("ExternalReleaseIndex");
             }
-
-            @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
-            @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
-            return View(model);
+            else
+            {
+                @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
+                @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+                @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
+                model.Code = "CERel/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
+                         DateTime.Now.Second + "/" + DateTime.Now.Millisecond;
+                return View(model);
+            }
         }
 
         public ActionResult ExternalReleaseDetails(int id)
@@ -165,6 +179,20 @@ namespace ERPProject.Controllers
             };
             return View(externalReleaseModel);
         }
+        public ActionResult GenerateReleasePrint(int id)
+        {
+            var x = _wService.GetExternalRelease(id);
+            var externalReleaseModel = new ExternalReleaseDetailsModelView
+            {
+                Id = x.Id,
+                Code = x.Code,
+                EmployeeFullName = x.Employee.FullName,
+                ContractorName = x.Contractor.Name,
+                CreationDate = x.CreatedOn,
+                ExternalReleaseRows = _wService.GetExternalReleaseRows(x.Id)
+            };
+            return new Rotativa.ActionAsPdf("ExternalReleaseDetails", externalReleaseModel);
+        }
         public ActionResult ExternalReceiptDetails(int id)
         {
             var x = _wService.GetExternalReceipt(id);
@@ -178,6 +206,20 @@ namespace ERPProject.Controllers
                 ExternalReceiptRows = _wService.GetExternalReceiptRows(id)
             };
             return View(externalReleaseModel);
+        }
+        public ActionResult GenerateReceiptPrint(int id)
+        {
+            var x = _wService.GetExternalReceipt(id);
+            var externalReceiptModel = new ExternalReceiptDetailsModelView
+            {
+                Id = x.Id,
+                Code = x.Code,
+                EmployeeFullName = x.Employee.FullName,
+                ContractorName = x.Contractor.Name,
+                CreationDate = x.CreationDate,
+                ExternalReceiptRows = _wService.GetExternalReceiptRows(x.Id)
+            };
+            return new Rotativa.ActionAsPdf("ExternalReceiptDetails", externalReceiptModel);
         }
         public ActionResult Delete(int id)
         {

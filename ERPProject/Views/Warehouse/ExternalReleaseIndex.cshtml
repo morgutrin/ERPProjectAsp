@@ -17,6 +17,9 @@
             @Html.DisplayNameFor(model => model.Code)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.OrderCode)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ContractorName)
         </th>
         <th>
@@ -35,6 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Code)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.OrderCode)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.ContractorName)
             </td>
             <td>
@@ -46,7 +52,8 @@
             <td>
 
                 @Html.ActionLink("Details", "ExternalReleaseDetails", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+                @Html.ActionLink("Print", "GenerateReleasePrint", new { id = item.Id })
             </td>
         </tr>
     }

@@ -17,6 +17,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Code)
             </th>
+            <td>
+                @Html.DisplayNameFor(model => model.OrderCode)
+            </td>
             <th>
                 @Html.DisplayNameFor(model => model.ContractorName)
             </th>
@@ -36,6 +39,9 @@
                 @Html.DisplayFor(modelItem => item.Code)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.OrderCode)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.ContractorName)
             </td>
             <td>
@@ -47,7 +53,8 @@
             <td>
 
                 @Html.ActionLink("Details", "ExternalReceiptDetails", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "DeleteExternalReceipt", new { id = item.Id })
+                @Html.ActionLink("Delete", "DeleteExternalReceipt", new { id = item.Id }) |
+                @Html.ActionLink("Print", "GenerateReceiptPrint", new { id = item.Id })
             </td>
         </tr>
     }
@@ -58,7 +65,7 @@
 {
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#externalReceiptsTable').DataTable({
                 "language": {
                     "lengthMenu": "Show _MENU_ records",

@@ -65,7 +65,9 @@
     <Compile Include="Implementation\InventoryService.cs" />
     <Compile Include="ILoginService.cs" />
     <Compile Include="Implementation\LoginService.cs" />
+    <Compile Include="Implementation\OrderService.cs" />
     <Compile Include="Implementation\WarehouseService.cs" />
+    <Compile Include="IOrderService.cs" />
     <Compile Include="IWarehouseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,6 +10,7 @@ namespace ERPProject.Models.Warehouse
     {
         public int Id { get; set; }
         public string Code { get; set; }
+        public string OrderCode { get; set; }
         public string ContractorName { get; set; }
 
         public string EmployeeFullName { get; set; }

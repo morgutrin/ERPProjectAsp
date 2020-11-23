@@ -16,7 +16,6 @@ namespace ERPProject.Entity
         public virtual Article Article { get; set; }
         [ForeignKey("Article")]
         public int ArticleId { get; set; }
-
         public decimal Price { get; set; }
         public int Amount { get; set; }
         [ForeignKey("ExternalReceipt")]
