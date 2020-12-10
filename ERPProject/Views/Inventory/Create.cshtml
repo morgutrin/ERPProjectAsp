@@ -5,21 +5,20 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
+<h2>Create inventory</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>InventoryCreateModelView</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="EmployeeId">Employee</label>
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.EmployeeId, (IEnumerable<SelectListItem>)ViewBag.Employees,null, new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.EmployeeId, (IEnumerable<SelectListItem>)ViewBag.Employees, null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,16 +40,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.InventoryNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="InventoryNumber">Inventory number</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.InventoryNumber, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.InventoryNumber, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.InventoryGroup, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="InventoryGroup">Inventory group</label>
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.InventoryGroup,null,  new { @class = "form-control"  })
+                @Html.EnumDropDownListFor(model => model.InventoryGroup, null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.InventoryGroup, "", new { @class = "text-danger" })
             </div>
         </div>

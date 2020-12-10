@@ -63,14 +63,14 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="OrderId">Order</label>
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.OrderId, (IEnumerable<SelectListItem>)@ViewBag.Orders, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.ContractorId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="ContractorId">Contractor</label>
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.ContractorId, (IEnumerable<SelectListItem>)@ViewBag.Contractors, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContractorId, "", new { @class = "text-danger" })

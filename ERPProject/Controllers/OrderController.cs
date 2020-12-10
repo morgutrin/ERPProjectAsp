@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace ERPProject.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderService _oService;
@@ -47,6 +48,7 @@ namespace ERPProject.Controllers
             //Thread.Sleep(1000);
             var orders = _oService.GetOrders().Select(x => new OrderIndexModelView
             {
+                Id = x.Id,
                 Code = x.Code,
                 ContractorName = x.Contractor.Name,
                 CreationDate = x.CreationDate,
@@ -102,6 +104,11 @@ namespace ERPProject.Controllers
                 @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
                 return View(model);
             }
+        }
+        public ActionResult Delete(int id)
+        {
+            _oService.DeleteOrder(id);
+            return RedirectToAction("Index");
         }
     }
 }

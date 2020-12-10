@@ -10,7 +10,7 @@
 
     function AddRow() {
         var row = $(
-            '<tr> <td><select id="articleSelect" name="articleSelect" class="form-control article"></select></td><td><input class="form-control" id="amount" name="amount" type="text" value="" /></td><td><input class="form-control" id="price" name="price" type="text" value="" /></td><td><button type="button" id="DeleteButton">Delete</button></td></tr>');
+            '<tr> <td><select id="articleSelect" name="articleSelect" class="form-control article"></select></td><td><input class="form-control" id="amount" name="amount" type="text" value="" /></td><td><input class="form-control" id="price" name="price" type="text" value="" /></td><td><button type="button" class="btn btn-default" id="DeleteButton">Delete</button></td></tr>');
         getOption(row.find('.article'));
         $('#externalRows').append(row);
 
@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.RealizationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="RealizationDate">Realization Date</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RealizationDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.RealizationDate, "", new { @class = "text-danger" })
@@ -103,8 +103,9 @@
 
                 <tr>
                     <td>
-                        <select id="articleSelect" name="articleSelect" class="form-control article"></select>
+                        <select style="min-width:191px" id="articleSelect" name="articleSelect" class="form-control article"></select>
                     </td>
+
                     <td>
                         @Html.TextBox("amount", null, new { @class = "form-control" })
                     </td>
@@ -112,7 +113,7 @@
                         @Html.TextBox("price", null, new { @class = "form-control" })
                     </td>
                     <td>
-                        <button type="button" id="DeleteButton">Delete</button>
+                        <button type="button" id="DeleteButton" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </table>
@@ -125,8 +126,8 @@
         </div>
         <hr />
         <div class="form-group text-center">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-12">
+                <input type="submit" value="Create" class="btn btn-success text-center" />
             </div>
         </div>
     </div>

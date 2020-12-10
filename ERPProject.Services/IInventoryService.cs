@@ -17,6 +17,7 @@ namespace ERPProject.Services
         IEnumerable<Inventory> GetAll();
         void ChangeOwner(int id);
 
-
+        bool IsInventoryNumberExist(string inventory);
+        bool IsCodeExist(string code);
     }
 }

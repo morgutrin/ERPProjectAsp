@@ -19,7 +19,6 @@ namespace ERPProject.Entity
         [Required, MaxLength(50)]
         public string LastName { get; set; }
         public string FullName { get; set; }
-
         public string Gender { get; set; }
         public string ImageUrl { get; set; }
         public DateTime BirthDate { get; set; }

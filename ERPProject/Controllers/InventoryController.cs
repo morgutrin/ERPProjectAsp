@@ -28,7 +28,7 @@ namespace ERPProject.Controllers
         // GET: Inventory
         public ActionResult Index()
         {
-
+            Uri MyUrl = Request.UrlReferrer;
             var inventories = _inventoryService.GetAll().Select(x => new InventoryIndexModelView
             {
                 Id = x.Id,
@@ -136,9 +136,14 @@ namespace ERPProject.Controllers
             _inventoryService.Delete(id);
             return RedirectToAction("Index");
         }
-
-
-        // GET: Inventory/Delete/5
+        public JsonResult IsCodeExist(string code)
+        {
+            return Json(!_inventoryService.IsCodeExist(code), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult IsInventoryNumberExist(string inventoryNumber)
+        {
+            return Json(!_inventoryService.IsInventoryNumberExist(inventoryNumber), JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

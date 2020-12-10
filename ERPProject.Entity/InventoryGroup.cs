@@ -9,6 +9,9 @@ namespace ERPProject.Entity
         myszki,
         komputery,
         laptopy,
-
+        klawiatury,
+        telefony,
+        monitory,
+        pendrive
     }
 }

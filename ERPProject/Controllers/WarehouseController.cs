@@ -117,7 +117,7 @@ namespace ERPProject.Controllers
         {
             @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
             @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
-            @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
+            @ViewBag.Orders = new SelectList(_oService.GetOrders().Where(x => x.Status.ToString() == "open"), "Id", "Code");
             ExternalReleaseCreateModelView model = new ExternalReleaseCreateModelView();
             model.Code = "CERel/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
                          DateTime.Now.Second + "/" + DateTime.Now.Millisecond;

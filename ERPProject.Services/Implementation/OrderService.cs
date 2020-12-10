@@ -16,6 +16,14 @@ namespace ERPProject.Services.Implementation
             _context = context;
         }
 
+        public void DeleteOrder(int id)
+        {
+            var order = _context.Orders.Single(x => x.Id == id);
+            _context.OrderRows.RemoveRange(order.OrderRows);
+            _context.Orders.Remove(order);
+            _context.SaveChanges();
+        }
+
         public IEnumerable<Order> GetOrders()
         {
             return _context.Orders;

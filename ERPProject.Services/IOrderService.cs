@@ -11,5 +11,7 @@ namespace ERPProject.Services
     {
         void SaveOrder(Order order);
         IEnumerable<Order> GetOrders();
+
+        void DeleteOrder(int id);
     }
 }

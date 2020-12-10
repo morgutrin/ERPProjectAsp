@@ -57,5 +57,13 @@ namespace ERPProject.Services.Implementation
         {
             throw new NotImplementedException();
         }
+        public bool IsCodeExist(string code)
+        {
+            return _context.Inventories.Any(x => x.Code.Equals(code));
+        }
+        public bool IsInventoryNumberExist(string inventory)
+        {
+            return _context.Inventories.Any(x => x.InventoryNumber.Equals(inventory));
+        }
     }
 }
