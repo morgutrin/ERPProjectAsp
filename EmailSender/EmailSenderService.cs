@@ -23,7 +23,7 @@ namespace EmailSender
             SmtpClient.UseDefaultCredentials = false;
             SmtpClient.EnableSsl = true;
 
-            SmtpClient.Credentials = new NetworkCredential("wencore474@gmail.com", "damekpogromca18");
+            SmtpClient.Credentials = new NetworkCredential("nope", "nope");
 
         }
 
