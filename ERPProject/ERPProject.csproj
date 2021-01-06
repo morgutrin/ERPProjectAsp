@@ -214,7 +214,10 @@
     <Compile Include="Models\Login\LoginIndexModelView.cs" />
     <Compile Include="Models\Login\LoginLoginModelView.cs" />
     <Compile Include="Models\Order\OrderCreateModelView.cs" />
+    <Compile Include="Models\Order\OrderEditModelView.cs" />
     <Compile Include="Models\Order\OrderIndexModelView.cs" />
+    <Compile Include="Models\Warehouse\Amortization\AmortizationCreateModelView.cs" />
+    <Compile Include="Models\Warehouse\Amortization\AmortizationIndexModelView.cs" />
     <Compile Include="Models\Warehouse\ArticlesDropDown.cs" />
     <Compile Include="Models\Warehouse\ExternalReceipt\ExternalReceiptCreateModelView.cs" />
     <Compile Include="Models\Warehouse\ExternalReceipt\ExternalReceiptDetailsModelView.cs" />
@@ -518,6 +521,9 @@
     <Content Include="Views\Warehouse\_ExternalReleaseEmployeeAmount.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Warehouse\AmortizationIndex.cshtml" />
+    <Content Include="Views\Warehouse\CreateAmortization.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

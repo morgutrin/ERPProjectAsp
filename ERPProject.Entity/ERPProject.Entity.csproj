@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amortization.cs" />
+    <Compile Include="AmortizationRow.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="ArticleGroup.cs" />
     <Compile Include="Class1.cs" />

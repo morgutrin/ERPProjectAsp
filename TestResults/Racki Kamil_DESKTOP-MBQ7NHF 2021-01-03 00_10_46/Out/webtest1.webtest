@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="353dff24-9c77-45fa-a20c-e235e6ab4ec4" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.95443de7-a67f-4660-8921-7929204239fb.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="3e0329ab-0fc9-4fbc-bb6b-f1029938035d" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://api.bing.com/qsml.aspx?query=http%3A%2F%2Flocalhost%3A63381%2F&amp;maxwidth=32765&amp;rowheight=20&amp;sectionHeight=160&amp;FORM=IESS4A&amp;market=pl" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="http%3A%2F%2Flocalhost%3A63381%2F" RecordedValue="http%3A%2F%2Flocalhost%3A63381%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS4A" RecordedValue="IESS4A" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="pl" RecordedValue="pl" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="7334ad13-189c-42e3-b5c3-905dddb23dfb" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="414cb02a-5d3b-4a70-8ed3-03f7cb160545" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="0fcb8711-19fa-4ecb-91f8-55fa51be96ad" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="1a24d12d-a0d3-45d4-b521-0983e7378e6b" Version="1.1" Url="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot" ThinkTime="207" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="43bbf2ff-9190-4f73-a493-1511a1b567c6" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Home/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="62c2f5a7-a5e8-4950-a8c0-e4852098f741" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="ff90075c-73bc-4ece-8edd-ffd78752f15f" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="SDgzAyaYF1CRiEtrPrsGqzUbcTvI9TFaUO5dPzGZDt55N7YfddO7rbKkWOqrifsJXemeaFTFMZftu22EaeNnPoPBpCch04mjEaptg4NKV201" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Login" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="a13a0fa9-e23a-47b3-9ce9-1c2c3369dbd0" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Home/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="SDgzAyaYF1CRiEtrPrsGqzUbcTvI9TFaUO5dPzGZDt55N7YfddO7rbKkWOqrifsJXemeaFTFMZftu22EaeNnPoPBpCch04mjEaptg4NKV201" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Login" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="0aa3b387-f66b-4c33-8268-236f46a12b21" Version="1.1" Url="http://localhost:63381/Warehouse/ExternalReceiptIndex" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="ba87a35b-08ec-4fcc-876d-ad61bd0bc572" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReceiptIndex" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="4caf19b1-bbc1-40d0-8d19-6acdc7e68812" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReceiptIndex" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="87906ef4-7534-4dfe-b595-eb09ed648496" Version="1.1" Url="http://localhost:63381/Warehouse/ExternalReleaseIndex" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="99bdca96-b1af-4d71-a92b-4725e50bcf04" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="d41915d6-b244-496a-933c-f7e74c426671" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReceiptIndex" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="73b68fba-a8d4-43d6-9d67-787adbca08af" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://api.bing.com/qsml.aspx?query=http%3A%2F%2Flocalhost%3A63381%2F&amp;maxwidth=32765&amp;rowheight=20&amp;sectionHeight=160&amp;FORM=IESS4A&amp;market=pl" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="http%3A%2F%2Flocalhost%3A63381%2F" RecordedValue="http%3A%2F%2Flocalhost%3A63381%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS4A" RecordedValue="IESS4A" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="pl" RecordedValue="pl" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="8f59897f-ddef-4344-a992-3312e084b247" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="66337ae7-1e6c-4bcb-acaf-f2f61086405e" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ec29e71d-2df4-4a96-9fee-3cd38788b579" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="33a94b8e-e22b-48c5-a050-98a7f4d12f13" Version="1.1" Url="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="1a8d8cf9-7b9d-4599-bd87-00d34b52526d" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Home/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="5bc2dd15-35ee-4057-a5df-1a9cebbc9879" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="858f75b4-2eb1-40ce-aefb-3db0f398ee3e" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="LqckMNZa_5201n0A43ApG6EjvW13DqxXEPMfgjYd_JY_xEpaN0_kmvtbn7BP-FY1frOGW6aOQ4jP2Pb6ET3Wwi6o6JGDmX_2fgxb1W8zogU1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Login" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="1a3e03ba-bf3c-4fd4-8195-c56cdda6013b" Version="1.1" Url="http://localhost:63381/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Home/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="LqckMNZa_5201n0A43ApG6EjvW13DqxXEPMfgjYd_JY_xEpaN0_kmvtbn7BP-FY1frOGW6aOQ4jP2Pb6ET3Wwi6o6JGDmX_2fgxb1W8zogU1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Login" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="admin" RecordedValue="admin" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="e88babd6-e71b-4208-b79b-0f8f45535a4d" Version="1.1" Url="http://localhost:63381/Order/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="c000d935-79e9-424b-b63d-ca43de477328" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="e58c4b19-3ba0-4237-b3c1-df8153a6ea54" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Home/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="f52b920e-a6e0-423c-85d6-ed68c89ce9d6" Version="1.1" Url="http://localhost:63381/Order/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="693f65b6-7c89-4c3c-9730-89b3d1fcabb0" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Create" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="0430cd66-9b11-4bb8-8513-cfa0614b20d5" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Create" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.Code" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Code" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.RealizationDate" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="RealizationDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.Code" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Code" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.RealizationDate" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="RealizationDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.ContractorId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.articleSelect" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.ContractorId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.articleSelect" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="bbab9f3b-0783-44f6-aae0-34f921a48dc9" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticles" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Order/Create" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="981deb6f-bcae-48ac-9e63-c699a6f2a3a9" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticles" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Order/Create" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="ee056634-4160-45e2-a218-e7a3789ceab4" Version="1.1" Url="http://localhost:63381/Order/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Order/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="cf458dae-9c0f-4aad-a9de-8ff4be8dda31" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="06f2f8d5-e481-41ab-a053-5ea6fbd3da8f" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="T3YQu2N-QPBDqYMhj7KxIPF6V2B9VlQxUWPxWaX4c08mOlDJDmIIMg2hbRE4hfJrF9dGqyrJN8cq3N-XfWkwZiDyOVtmXCKLudqGtSBYMzM1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Code" Value="{{FormPostParam5.Code}}" RecordedValue="ORD/2021/1/3/6/877" CorrelationBinding="{{FormPostParam5.Code}}" UrlEncode="True" />
+        <FormPostParameter Name="RealizationDate" Value="{{FormPostParam6.RealizationDate}}" RecordedValue="03.01.2021 00:02:06" CorrelationBinding="{{FormPostParam6.RealizationDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ContractorId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam7.ContractorId}}" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam8.articleSelect}}" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="8bb88a13-3e61-470e-835a-993ce7b9b4f7" Version="1.1" Url="http://localhost:63381/Order/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Order/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Order/Create" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="T3YQu2N-QPBDqYMhj7KxIPF6V2B9VlQxUWPxWaX4c08mOlDJDmIIMg2hbRE4hfJrF9dGqyrJN8cq3N-XfWkwZiDyOVtmXCKLudqGtSBYMzM1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Code" Value="{{FormPostParam9.Code}}" RecordedValue="ORD/2021/1/3/6/877" CorrelationBinding="{{FormPostParam9.Code}}" UrlEncode="True" />
+        <FormPostParameter Name="RealizationDate" Value="{{FormPostParam10.RealizationDate}}" RecordedValue="03.01.2021 00:02:06" CorrelationBinding="{{FormPostParam10.RealizationDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ContractorId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam11.ContractorId}}" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam12.articleSelect}}" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="b1f2e22c-bc55-4222-87cc-9612aa1ef051" Version="1.1" Url="http://localhost:63381/Warehouse/ExternalReleaseIndex" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="1aec2c21-1c67-4c95-8689-5f23580433ac" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="d158484e-14c8-4506-9d86-48d6df0aa6fc" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="3eaa87ba-3861-40cb-8d8c-c5242d1bda46" Version="1.1" Url="http://localhost:63381/Warehouse/CreateExternalRelease" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="eac8eb0c-0689-4732-9603-497d45b73906" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="ff9c3b73-f162-4282-b720-59860092d676" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.Code" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Code" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.Code" DisplayName="Extract Form Field" Description="Extract the value of a specified form field in the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="Code" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.OrderId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;ORD" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.ContractorId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.articleSelect" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.OrderId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;ORD" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.ContractorId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16.articleSelect" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;asd" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="2fef58ee-c146-45b4-baf4-ffb9be52ef0c" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticles" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="f77ac449-d19c-4821-a009-7e9c97cea26b" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticleAmount" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewBpAGQAIAA6ADIAfQA=</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="d71c9b60-9ad7-4d41-9ab5-f63e1e564199" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticleAmount" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewBpAGQAIAA6ADEAfQA=</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="c6e1f8e2-f49e-42b6-9100-a0e86a93cd06" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticles" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewB9AA==</StringHttpBody>
+    </Request>
+    <Request Method="POST" Guid="55ef4556-ddd8-4d6e-90b4-33a480010a07" Version="1.1" Url="http://localhost:63381/Warehouse/GetArticleAmount" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <StringHttpBody ContentType="application/json; charset=utf-8" InsertByteOrderMark="False">ewBpAGQAIAA6ADIAfQA=</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="59fd93c6-7763-4f33-809a-bb136672153a" Version="1.1" Url="http://localhost:63381/Warehouse/CreateExternalRelease" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Warehouse/ExternalReleaseIndex" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="8e6de355-04c9-4b6e-a45d-ea6bbe3caf5c" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="36a83de7-c3c4-4b81-832c-c895ae2590f0" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="APJvJlpKuUx5PPzk299PN7HPbjB2UftvAdXla-w1yltzJDRHWgPsvm3hN9HsoaxEMMC7U-aqna_jTY2c5hWHFkhcVZQknXZq6TTddiy3-5M1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Code" Value="{{FormPostParam1.Code}}" RecordedValue="CERel/2021/1/3/29/73" CorrelationBinding="{{FormPostParam1.Code}}" UrlEncode="True" />
+        <FormPostParameter Name="OrderId" Value="40" RecordedValue="40" CorrelationBinding="{{FormPostParam2.OrderId}}" UrlEncode="True" />
+        <FormPostParameter Name="ContractorId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam3.ContractorId}}" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam4.articleSelect}}" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Guid="a3e25e3f-e8d3-4b66-af16-1dadaacf1128" Version="1.1" Url="http://localhost:63381/Warehouse/CreateExternalRelease" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Warehouse/ExternalReleaseIndex" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/CreateExternalRelease" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="APJvJlpKuUx5PPzk299PN7HPbjB2UftvAdXla-w1yltzJDRHWgPsvm3hN9HsoaxEMMC7U-aqna_jTY2c5hWHFkhcVZQknXZq6TTddiy3-5M1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Code" Value="{{FormPostParam13.Code}}" RecordedValue="CERel/2021/1/3/29/73" CorrelationBinding="{{FormPostParam13.Code}}" UrlEncode="True" />
+        <FormPostParameter Name="OrderId" Value="40" RecordedValue="40" CorrelationBinding="{{FormPostParam14.OrderId}}" UrlEncode="True" />
+        <FormPostParameter Name="ContractorId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam15.ContractorId}}" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam16.articleSelect}}" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="articleSelect" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="amount" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="price" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="7d1aa0c2-3d9a-4832-8f22-3d7d4aa4d340" Version="1.1" Url="http://localhost:63381/Order/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="c72e045e-17e4-437d-949f-34f01f4b1b22" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="429005d7-cc1e-48bf-aa81-26ed5c125758" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Warehouse/ExternalReleaseIndex" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="d3ec1e86-68a1-4ffd-a765-c3f5e5023451" Version="1.1" Url="http://localhost:63381/Order/CloseOrder/44" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:63381/Order/Index" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="faf1d15c-e839-43bd-ac1b-d1faebc8a04f" Version="1.1" Url="https://fonts.googleapis.com/css2" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="family" Value="Roboto:wght@300" RecordedValue="Roboto:wght@300" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+            <QueryStringParameter Name="display" Value="swap" RecordedValue="swap" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+        <Request Method="GET" Guid="99448dd5-4b36-4878-bb44-f9234e7fd3cb" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:63381/Order/Index" />
+      </Headers>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

@@ -1,0 +1,10 @@
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\bin\Debug\WebTest1.webtest
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\bin\Debug\WebPerformanceTest1.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\bin\Debug\WebPerformanceTest1.pdb
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\bin\Debug\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\bin\Debug\pl\Microsoft.VisualStudio.QualityTools.WebTestFramework.resources.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\obj\Debug\WebPerformanceTest1.csprojAssemblyReference.cache
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\obj\Debug\WebPerformanceTest1.csproj.CoreCompileInputs.cache
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\obj\Debug\WebPerformanceTest1.csproj.CopyComplete
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\obj\Debug\WebPerformanceTest1.dll
+C:\Users\Racki Kamil\source\repos\ERPProject\WebPerformanceTest1\obj\Debug\WebPerformanceTest1.pdb

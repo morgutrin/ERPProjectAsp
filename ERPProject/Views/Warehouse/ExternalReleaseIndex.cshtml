@@ -6,10 +6,16 @@
     ViewBag.Title = "ExternalReleases";
 }
 
-<h2>ExternalReleaseIndex</h2>
+<h2>External Releases</h2>
 @Html.Action("GetEmployeeExternalReleases", "Warehouse")
 <p>
-    @Html.ActionLink("Create New", "CreateExternalRelease")
+  
+    <a href="@Url.Action("CreateExternalRelease", "Warehouse")" class="btn btn-dark">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span>
+            <strong>Create</strong>
+        </span>
+    </a>
 </p>
 <table class="table">
     <tr>
@@ -17,18 +23,18 @@
             @Html.DisplayNameFor(model => model.Code)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderCode)
+           Order code
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContractorName)
+          Contractor
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmployeeFullName)
+          Employee
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
+           Creation date
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
     @foreach (var item in Model)
@@ -50,10 +56,25 @@
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
             <td>
-
-                @Html.ActionLink("Details", "ExternalReleaseDetails", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
-                @Html.ActionLink("Print", "GenerateReleasePrint", new { id = item.Id })
+                <a href="@Url.Action("ExternalReleaseDetails", "Warehouse",new { id =item.Id})" class="btn btn-dark">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                    <span>
+                    
+                    </span>
+                </a>
+                <a href="@Url.Action("GenerateReleasePrint", "Warehouse",new { id =item.Id})" class="btn btn-dark">
+                    <i class="fa fa-print" aria-hidden="true"></i>
+                    <span>
+                 
+                    </span>
+                </a>
+                <a href="@Url.Action("Delete", "Warehouse",new { id =item.Id})" class="btn btn-dark">
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                    <span>
+                       
+                    </span>
+                </a>
+             
             </td>
         </tr>
     }

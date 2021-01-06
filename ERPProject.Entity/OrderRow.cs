@@ -19,6 +19,7 @@ namespace ERPProject.Entity
         public virtual Order Order { get; set; }
         [ForeignKey("Order")]
         public int? OrderId { get; set; }
+
         public decimal Price { get; set; }
         public int Amount { get; set; }
 

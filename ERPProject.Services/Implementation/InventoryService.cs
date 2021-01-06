@@ -53,10 +53,6 @@ namespace ERPProject.Services.Implementation
             return _context.Inventories.Include(x => x.Employee);
         }
 
-        public void ChangeOwner(int id)
-        {
-            throw new NotImplementedException();
-        }
         public bool IsCodeExist(string code)
         {
             return _context.Inventories.Any(x => x.Code.Equals(code));

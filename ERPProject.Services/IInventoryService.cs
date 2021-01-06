@@ -15,7 +15,7 @@ namespace ERPProject.Services
         void Update(int id);
         void Delete(int id);
         IEnumerable<Inventory> GetAll();
-        void ChangeOwner(int id);
+
 
         bool IsInventoryNumberExist(string inventory);
         bool IsCodeExist(string code);

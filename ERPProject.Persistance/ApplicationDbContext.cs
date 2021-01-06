@@ -31,6 +31,9 @@ namespace ERPProject.Persistance
         public DbSet<ExternalReceiptRow> ExternalReceiptRows { get; set; }
         public DbSet<ExternalReceipt> ExternalReceipts { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<Amortization> Amortizations { get; set; }
+        public DbSet<AmortizationRow> AmortizationRows { get; set; }
+
 
 
     }

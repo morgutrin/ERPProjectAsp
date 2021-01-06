@@ -17,12 +17,6 @@ C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\bin\Debug\En
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.ExternalRelease.resources
 C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.csproj.GenerateResource.cache
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.amountprice.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.events.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.notific.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.edsa.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.eluwina.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.repi.resources
-C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.adddsa.resources
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.dsads.resources
+C:\Users\Racki Kamil\source\repos\ERPProject\ERPProject.Persistance\obj\Debug\ERPProject.Persistance.Migrations.elo1.resources

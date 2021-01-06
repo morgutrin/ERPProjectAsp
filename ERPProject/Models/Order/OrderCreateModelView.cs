@@ -12,7 +12,7 @@ namespace ERPProject.Models.Order
         public int Id { get; set; }
         public string Code { get; set; }
         public int ContractorId { get; set; }
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime RealizationDate { get; set; }
         public Status Status { get; set; }
 

@@ -1,12 +1,14 @@
 ﻿using ERPProject.Entity;
 using ERPProject.Models.Warehouse;
+using ERPProject.Models.Warehouse.Amortization;
 using ERPProject.Models.Warehouse.ExternalReceipt;
 using ERPProject.Models.Warehouse.ExternalRelease;
 using ERPProject.Services;
+using ERPProject.Services.Exceptions;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Web.Mvc;
 
@@ -38,8 +40,8 @@ namespace ERPProject.Controllers
                 Amount = list.Count()
             };
             return PartialView("_ExternalReleaseEmployeeAmount", model);
-
         }
+
         public ActionResult ExternalReceiptIndex()
         {
             var list = _wService.GetAll().Select(x => new ExternalReceiptIndexModelView
@@ -50,6 +52,19 @@ namespace ERPProject.Controllers
                 EmployeeFullName = x.Employee.FullName,
                 ContractorName = x.Contractor.Name,
                 CreationDate = x.CreationDate
+            });
+            return View(list.ToList());
+        }
+        public ActionResult AmortizationIndex()
+        {
+            var list = _wService.GetAllAmortizations().Select(x => new AmortizationIndexModelView
+            {
+                Id = x.Id,
+                Code = x.Code,
+                EmployeeFullName = x.Employee.FullName,
+                CreationDate = x.CreatedOn,
+                Reason = x.Reason
+
             });
             return View(list.ToList());
         }
@@ -65,6 +80,58 @@ namespace ERPProject.Controllers
                 CreationDate = x.CreatedOn
             });
             return View(list.ToList());
+        }
+        public ActionResult CreateAmortization()
+        {
+
+            @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+
+            AmortizationCreateModelView model = new AmortizationCreateModelView();
+            model.Code = "AM/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
+                         DateTime.Now.Second + "/" + DateTime.Now.Millisecond;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult CreateAmortization(AmortizationCreateModelView model, int[] articleSelect, int[] amount, decimal[] price)
+        {
+            if (ModelState.IsValid)
+            {
+                Amortization amortization = new Amortization
+                {
+                    Code = model.Code,
+                    CreatedById = _lService.GetEmployeeId(User.Identity.Name),
+                    CreatedOn = DateTime.Now,
+                    Reason = model.Reason,
+                    AmortizationRows = new List<AmortizationRow>()
+
+                };
+                for (int i = 0; i < articleSelect.Length; i++)
+                {
+                    try
+                    {
+                        _aService.DecreaseAmount(articleSelect[i], amount[i]);
+                    }
+                    catch (AmountLessThanZeroException e)
+                    {
+                        @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+                    }
+                    AmortizationRow row = new AmortizationRow
+                    {
+                        ArticleId = articleSelect[i],
+                        Amount = amount[i]
+
+                    };
+                    amortization.AmortizationRows.Add(row);
+                }
+                _wService.SaveAmortization(amortization);
+                return RedirectToAction("AmortizationIndex");
+            }
+            else
+            {
+
+                @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+                return View(model);
+            }
         }
         public ActionResult CreateExternalReceipt()
         {
@@ -113,6 +180,7 @@ namespace ERPProject.Controllers
             @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
             return View(model);
         }
+
         public ActionResult CreateExternalRelease()
         {
             @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
@@ -142,14 +210,23 @@ namespace ERPProject.Controllers
                 var release = _wService.GetExternalRelease(model.Code);
                 for (int i = 0; i < articleSelect.Length; i++)
                 {
-                    _aService.DecreaseAmount(articleSelect[i], amount[i]);
-                    _wService.SaveExternalReleaseRows(new ExternalReleaseRow
+                    try
                     {
-                        Amount = amount[i],
-                        Price = price[i],
-                        ArticleId = articleSelect[i],
-                        ExternalReleaseId = release.Id
-                    });
+                        _aService.DecreaseAmount(articleSelect[i], amount[i]);
+                    }
+                    catch (AmountLessThanZeroException e)
+                    {
+                        @ViewBag.Contractors = new SelectList(_cService.GetAll(), "Id", "Name");
+                        @ViewBag.Articles = new SelectList(_aService.GetAll(), "Id", "Name");
+                        @ViewBag.Orders = new SelectList(_oService.GetOrders(), "Id", "Code");
+                        model.Code = "CERel/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/" +
+                                 DateTime.Now.Second + "/" + DateTime.Now.Millisecond;
+
+                        @ViewBag.Error = "Not enough articles in warehouse";
+                        return View(model);
+                    }
+
+
                 }
 
                 return RedirectToAction("ExternalReleaseIndex");
@@ -179,6 +256,7 @@ namespace ERPProject.Controllers
             };
             return View(externalReleaseModel);
         }
+
         public ActionResult GenerateReleasePrint(int id)
         {
             var x = _wService.GetExternalRelease(id);
@@ -193,6 +271,7 @@ namespace ERPProject.Controllers
             };
             return new Rotativa.ActionAsPdf("ExternalReleaseDetails", externalReleaseModel);
         }
+
         public ActionResult ExternalReceiptDetails(int id)
         {
             var x = _wService.GetExternalReceipt(id);
@@ -207,6 +286,7 @@ namespace ERPProject.Controllers
             };
             return View(externalReleaseModel);
         }
+
         public ActionResult GenerateReceiptPrint(int id)
         {
             var x = _wService.GetExternalReceipt(id);
@@ -221,11 +301,13 @@ namespace ERPProject.Controllers
             };
             return new Rotativa.ActionAsPdf("ExternalReceiptDetails", externalReceiptModel);
         }
+
         public ActionResult Delete(int id)
         {
             _wService.DeleteExternalRelease(id);
             return RedirectToAction("ExternalReleaseIndex");
         }
+
         [HttpPost]
         public JsonResult GetArticles()
         {
@@ -237,7 +319,13 @@ namespace ERPProject.Controllers
             var articlesSelect = new SelectList(articles, "Id", "Name");
             return Json(articles);
         }
+        [HttpPost]
+        public JsonResult GetArticleAmount(int id)
+        {
+            var articleAmount = _aService.GetArticle(id);
 
+            return Json(articleAmount.Amount);
+        }
         public ActionResult DeleteExternalReceipt(int id)
         {
             _wService.DeleteExternalReceipt(id);

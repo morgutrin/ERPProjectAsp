@@ -26,6 +26,11 @@ namespace ERPProject.Services
         IEnumerable<ExternalRelease> GetAllExternalReleases();
         IEnumerable<ExternalReleaseRow> GetExternalReleaseRows(int externalReleaseId);
         void DeleteExternalRelease(int id);
+        //amortization
+        void SaveAmortization(Amortization amortization);
+        IEnumerable<Amortization> GetAllAmortizations();
+        Amortization GetAmortization(int id);
+
 
     }
 }

@@ -59,37 +59,13 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Migrations\202006042142316_External Release.cs" />
-    <Compile Include="Migrations\202006042142316_External Release.designer.cs">
-      <DependentUpon>202006042142316_External Release.cs</DependentUpon>
+    <Compile Include="Migrations\202012272104297_dsads.cs" />
+    <Compile Include="Migrations\202012272104297_dsads.designer.cs">
+      <DependentUpon>202012272104297_dsads.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006071917177_amount price.cs" />
-    <Compile Include="Migrations\202006071917177_amount price.designer.cs">
-      <DependentUpon>202006071917177_amount price.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006142110579_events.cs" />
-    <Compile Include="Migrations\202006142110579_events.designer.cs">
-      <DependentUpon>202006142110579_events.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006152103007_notific.cs" />
-    <Compile Include="Migrations\202006152103007_notific.designer.cs">
-      <DependentUpon>202006152103007_notific.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010181916578_edsa.cs" />
-    <Compile Include="Migrations\202010181916578_edsa.designer.cs">
-      <DependentUpon>202010181916578_edsa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010221924343_eluwina.cs" />
-    <Compile Include="Migrations\202010221924343_eluwina.designer.cs">
-      <DependentUpon>202010221924343_eluwina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010221937059_repi.cs" />
-    <Compile Include="Migrations\202010221937059_repi.designer.cs">
-      <DependentUpon>202010221937059_repi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010222034594_adddsa.cs" />
-    <Compile Include="Migrations\202010222034594_adddsa.designer.cs">
-      <DependentUpon>202010222034594_adddsa.cs</DependentUpon>
+    <Compile Include="Migrations\202012281805379_elo1.cs" />
+    <Compile Include="Migrations\202012281805379_elo1.designer.cs">
+      <DependentUpon>202012281805379_elo1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,29 +81,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006042142316_External Release.resx">
-      <DependentUpon>202006042142316_External Release.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012272104297_dsads.resx">
+      <DependentUpon>202012272104297_dsads.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006071917177_amount price.resx">
-      <DependentUpon>202006071917177_amount price.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006142110579_events.resx">
-      <DependentUpon>202006142110579_events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006152103007_notific.resx">
-      <DependentUpon>202006152103007_notific.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010181916578_edsa.resx">
-      <DependentUpon>202010181916578_edsa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010221924343_eluwina.resx">
-      <DependentUpon>202010221924343_eluwina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010221937059_repi.resx">
-      <DependentUpon>202010221937059_repi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010222034594_adddsa.resx">
-      <DependentUpon>202010222034594_adddsa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012281805379_elo1.resx">
+      <DependentUpon>202012281805379_elo1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

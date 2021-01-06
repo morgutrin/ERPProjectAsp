@@ -96,5 +96,21 @@ namespace ERPProject.Services.Implementation
             _context.ExternalReleases.Remove(GetExternalRelease(id));
             _context.SaveChanges();
         }
+
+        public void SaveAmortization(Amortization amortization)
+        {
+            _context.Amortizations.Add(amortization);
+            _context.SaveChanges();
+        }
+
+        public IEnumerable<Amortization> GetAllAmortizations()
+        {
+            return _context.Amortizations;
+        }
+
+        public Amortization GetAmortization(int id)
+        {
+            return _context.Amortizations.Single(x => x.Id.Equals(id)) is null ? _context.Amortizations.First(x => x.Id.Equals(id)) : null;
+        }
     }
 }

@@ -81,8 +81,6 @@ namespace ERPProject.Controllers
                 };
                 _inventoryService.Create(inventory);
 
-
-
                 return RedirectToAction("Index");
             }
             return View();

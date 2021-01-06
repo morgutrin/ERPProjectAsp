@@ -9,7 +9,7 @@
 
     function AddRow() {
         var row = $(
-            '<tr> <td><select id="articleSelect" name="articleSelect" class="form-control article"></select></td><td><input class="form-control" id="amount" name="amount" type="text" value="" /></td><td><input class="form-control" id="price" name="price" type="text" value="" /></td></tr>');
+            '<tr> <td><select style="min-width:191px" id="articleSelect" name="articleSelect" class="form-control article"></select></td><td><input class="form-control" id="amount" name="amount" type="text" value="" /></td><td><input class="form-control amountInWarehouse" id="amountInWarehose" name="amountInWarehose" type="text" value="0" disabled="disabled"></td><td><input class="form-control" id="price" name="price" type="text" value="" /></td><td><button type="button" id="DeleteButton" class="btn btn-danger">Delete</button></td></tr>');
         getOption(row.find('.article'));
         $('#externalRows').append(row);
 
@@ -24,8 +24,8 @@
             dataType: "json",
             success: function (response) {
                 $.each(response, function () {
-                    
                     select.append($("<option></option>").val(this['Id']).html(this['Name']));
+
                 });
             },
             failure: function (response) {
@@ -37,10 +37,43 @@
         });
 
     }
+    function getAmount(id) {
+        var amount = "";
+        $.ajax({
+            type: "POST",
+            url: "/Warehouse/GetArticleAmount",
+            data: '{id :' + id + '}',
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            dataType: "json",
+            success: function (response) {
+                amount = response;
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+        return amount;
+    }
+
 
     $(document).ready(function () {
 
+
         getOption($('.article'));
+
+        $("#externalRows").on("click", "#DeleteButton", function () {
+            $(this).closest("tr").remove();
+        });
+        $("#externalRows").on("change", "#articleSelect", function () {
+            var idd = $(this).children(":selected").val();
+            var amount = getAmount(idd);
+            $(this).closest("tr").find("#amountInWarehose").val(amount);
+        });
+
     });
 </script>
 
@@ -84,20 +117,30 @@
                     <td>Article</td>
 
                     <td>Amount</td>
-
+                    <td>Amount in warehouse</td>
                     <td>Price</td>
+                    <td>
+                        Action
+                    </td>
                 </tr>
 
 
                 <tr>
                     <td>
-                        <select id="articleSelect" name="articleSelect" class="form-control article"></select>
+                        <select style="min-width:191px" id="articleSelect" name="articleSelect" class="form-control article"></select>
                     </td>
+
                     <td>
                         @Html.TextBox("amount", null, new { @class = "form-control" })
                     </td>
                     <td>
+                        <input class="form-control amountInWarehouse" id="amountInWarehose" name="amountInWarehose" type="text" value="" disabled="disabled">
+                    </td>
+                    <td>
                         @Html.TextBox("price", null, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        <button type="button" id="DeleteButton" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </table>
@@ -110,12 +153,14 @@
         </div>
         <hr />
         <div class="form-group text-center">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class=" col-md-12">
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>
-
+    <div class="text-center">
+        <h3>@ViewBag.Error</h3>
+    </div>
 }
 
 <div>
